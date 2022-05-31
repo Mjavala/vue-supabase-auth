@@ -1,10 +1,22 @@
 module.exports = {
   env: {
     node: true,
+    es6: true,
   },
-  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:prettier/recommended',
+    'eslint:recommended',
+    '@vue/typescript/recommended',
+    'plugin:vue/base',
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   rules: {
-    // override/add rules settings here, such as:
-    // 'vue/no-unused-vars': 'error'
+    'prettier/prettier': ['error', { singleQuote: true }],
+    'vue/multi-word-component-names': 'off',
+    'vue/script-setup-uses-vars': 'error',
   },
 };
